@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><Policy ID="6bcb04b1-4061-431a-98a1-3acd9fab9d54" Name="Meltdown - Registry Keys" Description="Q2hlY2tzIGZvciByZWdpc3RyeSBrZXlzOg0KTWVtb3J5IE1hbmFnZW1lbnQNClZpcnR1YWxpemF0aW9u" Version="2.2.0.116" RemoteCategory="0" ExecutionType="Local" PS3ObjectCount="0">
+  <Object ID="{255b8832-08c4-43e6-80ce-10a0beeec4cb}" Type="{B6FA6D8B-EEAA-47A6-8463-7F9A4F5BBB6E}" Data="&lt;xml&gt;&lt;OutputParameters&gt;&lt;Parameter ParameterName=&quot;FeatureSettingOverride&quot; Label=&quot;FeatureSettingOverride&quot; ParameterType=&quot;string&quot; Value=&quot;Get Registry Value.Value&quot; /&gt;&lt;Parameter ParameterName=&quot;FeatureSettingOverrideMask&quot; Label=&quot;FeatureSettingOverrideMask&quot; ParameterType=&quot;string&quot; Value=&quot;Get Registry Value.Value&quot; /&gt;&lt;/OutputParameters&gt;&lt;/xml&gt;" />
+  <LinkManager xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.datacontract.org/2004/07/PolicyExecutor">
+    <hashset xmlns:d2p1="http://schemas.datacontract.org/2004/07/System">
+      <d2p1:TupleOfstringstringstringstring>
+        <d2p1:m_Item1>48ba9bb1-837f-46b6-b671-c6b358903042.Value</d2p1:m_Item1>
+        <d2p1:m_Item2>OutputObject</d2p1:m_Item2>
+        <d2p1:m_Item3></d2p1:m_Item3>
+        <d2p1:m_Item4>FeatureSettingOverride</d2p1:m_Item4>
+      </d2p1:TupleOfstringstringstringstring>
+      <d2p1:TupleOfstringstringstringstring>
+        <d2p1:m_Item1>1e7e7756-96ee-4136-a570-83c08d211edd.Value</d2p1:m_Item1>
+        <d2p1:m_Item2>OutputObject</d2p1:m_Item2>
+        <d2p1:m_Item3></d2p1:m_Item3>
+        <d2p1:m_Item4>FeatureSettingOverrideMask</d2p1:m_Item4>
+      </d2p1:TupleOfstringstringstringstring>
+    </hashset>
+  </LinkManager>
+  <Activity mc:Ignorable="sads sap" x:Class="Policy Builder" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:p="clr-namespace:PolicyExecutor;assembly=PolicyExecutionEngine" xmlns:sads="http://schemas.microsoft.com/netfx/2010/xaml/activities/debugger" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <x:Members>
+      <x:Property Name="PolicyGUID" Type="InArgument(x:String)" />
+    </x:Members>
+    <sap:VirtualizedContainerService.HintSize>717,1921</sap:VirtualizedContainerService.HintSize>
+    <mva:VisualBasic.Settings>Assembly references and imported namespaces serialized as XML namespaces</mva:VisualBasic.Settings>
+    <p:PolicySequence DisplayName="Policy Builder" sap:VirtualizedContainerService.HintSize="717,1921" mva:VisualBasic.Settings="Assembly references and imported namespaces serialized as XML namespaces">
+      <p:PolicySequence.Activities>
+        <p:GetRegistryValue BaseKey_ItemProp="{x:Null}" Key_ItemProp="{x:Null}" Property_ItemProp="{x:Null}" AssemblyName="PolicyExecutionEngine, Version=2.2.0.116, Culture=neutral, PublicKeyToken=null" BaseKey="HKLM" BaseKey_DisplayArg="HKLM" BaseKey_Item="{x:Null}" DisplayName="Get Registry Value" sap:VirtualizedContainerService.HintSize="681,160" Key="SYSTEM\CurrentControlSet\Control\Session Manager\Memory Management" Key_DisplayArg="SYSTEM\CurrentControlSet\Control\Session Manager\Memory Management" Key_Item="{x:Null}" Moniker="48ba9bb1-837f-46b6-b671-c6b358903042" Property="FeatureSettingsOverride" Property_DisplayArg="FeatureSettingsOverride" Property_Item="{x:Null}" Result="[GetRegistryValue_Result_1]" ResultString="[GetRegistryValue_ResultString_1]" RunAsCurrentLoggedOnUser="False" ScriptExecutionMethod="ExecuteDebug" TypeName="GetRegistryValue" Value="[GetRegistryValue_Value_1]" m_bTextLinkChange="False" />
+        <p:GetRegistryValue BaseKey_ItemProp="{x:Null}" Key_ItemProp="{x:Null}" Property_ItemProp="{x:Null}" AssemblyName="PolicyExecutionEngine, Version=2.2.0.116, Culture=neutral, PublicKeyToken=null" BaseKey="HKLM" BaseKey_DisplayArg="HKLM" BaseKey_Item="{x:Null}" DisplayName="Get Registry Value" sap:VirtualizedContainerService.HintSize="681,160" Key="SYSTEM\CurrentControlSet\Control\Session Manager\Memory Management" Key_DisplayArg="SYSTEM\CurrentControlSet\Control\Session Manager\Memory Management" Key_Item="{x:Null}" Moniker="1e7e7756-96ee-4136-a570-83c08d211edd" Property="FeatureSettingsOverrideMask" Property_DisplayArg="FeatureSettingsOverrideMask" Property_Item="{x:Null}" Result="[GetRegistryValue_Result]" ResultString="[GetRegistryValue_ResultString]" RunAsCurrentLoggedOnUser="False" ScriptExecutionMethod="ExecuteDebug" TypeName="GetRegistryValue" Value="[GetRegistryValue_Value]" m_bTextLinkChange="False" />
+        <p:RegistryKeyExists BaseKey_ItemProp="{x:Null}" Key_ItemProp="{x:Null}" AssemblyName="PolicyExecutionEngine, Version=2.2.0.116, Culture=neutral, PublicKeyToken=null" BaseKey="HKLM" BaseKey_DisplayArg="HKLM" BaseKey_Item="{x:Null}" Conditional="[RegistryKeyExists_Conditional]" DisplayName="Registry Key Exists" sap:VirtualizedContainerService.HintSize="681,124" Key="SOFTWARE\Microsoft\Windows NT\CurrentVersion\Virtualization" Key_DisplayArg="SOFTWARE\Microsoft\Windows NT\CurrentVersion\Virtualization" Key_Item="{x:Null}" Moniker="3915db03-4351-4745-8d7e-1897297d8cc3" Result="[RegistryKeyExists_Result]" ResultString="[RegistryKeyExists_ResultString]" RunAsCurrentLoggedOnUser="False" ScriptExecutionMethod="ExecuteDebug" TypeName="RegistryKeyExists" m_bTextLinkChange="False" />
+        <p:IfObject Condition_ItemProp="{x:Null}" Value_Item="{x:Null}" Value_ItemProp="{x:Null}" Variable_ItemProp="{x:Null}" AssemblyName="PolicyExecutionEngine, Version=2.2.0.116, Culture=neutral, PublicKeyToken=null" Condition="equals" Condition_DisplayArg="equals" Condition_Item="{x:Null}" DisplayName="If" sap:VirtualizedContainerService.HintSize="681,1134" Moniker="7c02abe5-262a-43dd-9526-768d8237ccb2" Result="[IfObject_Result]" ResultString="[IfObject_ResultString]" RunAsCurrentLoggedOnUser="False" ScriptExecutionMethod="None" TypeName="IfObject" Value_DisplayArg="True" Value_Type="x:String" Variable="[RegistryKeyExists_Conditional]" Variable_DisplayArg="Registry Key Exists.Conditional" Variable_Item="{x:Null}" Variable_Type="x:String" m_bTextLinkChange="False">
+          <p:IfObject.IfOption>
+            <p:SequenceActivity DisplayName="Then" sap:VirtualizedContainerService.HintSize="649,933" Name="SequenceActivity">
+              <p:SequenceActivity.Activities>
+                <p:GetRegistryValue BaseKey_ItemProp="{x:Null}" Key_ItemProp="{x:Null}" Property_ItemProp="{x:Null}" AssemblyName="PolicyExecutionEngine, Version=2.2.0.116, Culture=neutral, PublicKeyToken=null" BaseKey="HKLM" BaseKey_DisplayArg="HKLM" BaseKey_Item="{x:Null}" DisplayName="Get Registry Value" sap:VirtualizedContainerService.HintSize="611,160" Key="SOFTWARE\Microsoft\Windows NT\CurrentVersion\Virtualization" Key_DisplayArg="SOFTWARE\Microsoft\Windows NT\CurrentVersion\Virtualization" Key_Item="{x:Null}" Moniker="cafabaee-663c-4305-aa31-f96451849ccf" Property="MinVmVersionForCpuBasedMitigations" Property_DisplayArg="MinVmVersionForCpuBasedMitigations" Property_Item="{x:Null}" Result="[GetRegistryValue_Result_2]" ResultString="[GetRegistryValue_ResultString_2]" RunAsCurrentLoggedOnUser="False" ScriptExecutionMethod="ExecuteDebug" TypeName="GetRegistryValue" Value="[GetRegistryValue_Value_2]" m_bTextLinkChange="False" />
+                <p:IfObject Condition_Item="{x:Null}" Condition_ItemProp="{x:Null}" Value_Item="{x:Null}" Value_ItemProp="{x:Null}" Variable_Item="{x:Null}" Variable_ItemProp="{x:Null}" AssemblyName="PolicyExecutionEngine, Version=2.2.0.116, Culture=neutral, PublicKeyToken=null" Condition="does not equal" Condition_DisplayArg="does not equal" DisplayName="If" sap:VirtualizedContainerService.HintSize="611,583" Moniker="d393a30a-5e73-4c2c-82fe-4a41b8f7c8d6" Result="[IfObject_Result_1]" ResultString="[IfObject_ResultString_1]" RunAsCurrentLoggedOnUser="False" ScriptExecutionMethod="None" TypeName="IfObject" Value_DisplayArg="1.0" Value_Type="x:String" Variable="[GetRegistryValue_Value_2]" Variable_DisplayArg="Get Registry Value.Value" Variable_Type="x:String" m_bTextLinkChange="False">
+                  <p:IfObject.IfOption>
+                    <p:SequenceActivity DisplayName="Then" sap:VirtualizedContainerService.HintSize="579,382" Name="SequenceActivity">
+                      <p:SequenceActivity.Activities>
+                        <p:SetRegistryValue BaseKey_Item="{x:Null}" BaseKey_ItemProp="{x:Null}" Key_Item="{x:Null}" Key_ItemProp="{x:Null}" PropertyName_Item="{x:Null}" PropertyName_ItemProp="{x:Null}" PropertyType_Item="{x:Null}" PropertyType_ItemProp="{x:Null}" PropertyValue_Item="{x:Null}" PropertyValue_ItemProp="{x:Null}" AssemblyName="PolicyExecutionEngine, Version=2.2.0.116, Culture=neutral, PublicKeyToken=null" BaseKey="HKLM" BaseKey_DisplayArg="HKLM" DisplayName="Set Registry Value" sap:VirtualizedContainerService.HintSize="541,232" Key="SOFTWARE\Microsoft\Windows NT\CurrentVersion\Virtualization" Key_DisplayArg="SOFTWARE\Microsoft\Windows NT\CurrentVersion\Virtualization" Moniker="9cd41d2b-bf24-4b56-8750-2bdc14b51616" PropertyName="MinVmVersionForCpuBasedMitigations" PropertyName_DisplayArg="MinVmVersionForCpuBasedMitigations" PropertyType="String" PropertyType_DisplayArg="String" PropertyValue="1.0" PropertyValue_DisplayArg="1.0" Result="[SetRegistryValue_Result]" ResultString="[SetRegistryValue_ResultString]" RunAsCurrentLoggedOnUser="False" ScriptExecutionMethod="ExecuteDebug" TypeName="SetRegistryValue" m_bTextLinkChange="False" />
+                      </p:SequenceActivity.Activities>
+                      <p:SequenceActivity.Variables>
+                        <Variable x:TypeArguments="x:String" Name="SetRegistryValue_ResultString" />
+                        <Variable x:TypeArguments="x:Double" Name="SetRegistryValue_Result" />
+                      </p:SequenceActivity.Variables>
+                    </p:SequenceActivity>
+                  </p:IfObject.IfOption>
+                  <p:IfObject.Value>
+                    <InArgument x:TypeArguments="x:Object">
+                      <p:ObjectLiteral Value="1.0" />
+                    </InArgument>
+                  </p:IfObject.Value>
+                </p:IfObject>
+              </p:SequenceActivity.Activities>
+              <p:SequenceActivity.Variables>
+                <Variable x:TypeArguments="x:String" Name="GetRegistryValue_Value_2" />
+                <Variable x:TypeArguments="x:String" Name="GetRegistryValue_ResultString_2" />
+                <Variable x:TypeArguments="x:Double" Name="GetRegistryValue_Result_2" />
+                <Variable x:TypeArguments="x:String" Name="IfObject_ResultString_1" />
+                <Variable x:TypeArguments="x:Double" Name="IfObject_Result_1" />
+              </p:SequenceActivity.Variables>
+            </p:SequenceActivity>
+          </p:IfObject.IfOption>
+          <p:IfObject.Value>
+            <InArgument x:TypeArguments="x:Object">
+              <p:ObjectLiteral Value="True" />
+            </InArgument>
+          </p:IfObject.Value>
+        </p:IfObject>
+      </p:PolicySequence.Activities>
+      <p:PolicySequence.Variables>
+        <Variable x:TypeArguments="x:String" Name="GetRegistryValue_Value" />
+        <Variable x:TypeArguments="x:String" Name="GetRegistryValue_ResultString" />
+        <Variable x:TypeArguments="x:Double" Name="GetRegistryValue_Result" />
+        <Variable x:TypeArguments="x:String" Name="GetRegistryValue_Value_1" />
+        <Variable x:TypeArguments="x:String" Name="GetRegistryValue_ResultString_1" />
+        <Variable x:TypeArguments="x:Double" Name="GetRegistryValue_Result_1" />
+        <Variable x:TypeArguments="x:String" Name="RegistryKeyExists_Conditional" />
+        <Variable x:TypeArguments="x:String" Name="RegistryKeyExists_ResultString" />
+        <Variable x:TypeArguments="x:Double" Name="RegistryKeyExists_Result" />
+        <Variable x:TypeArguments="x:String" Name="IfObject_ResultString" />
+        <Variable x:TypeArguments="x:Double" Name="IfObject_Result" />
+      </p:PolicySequence.Variables>
+    </p:PolicySequence>
+  </Activity>
+</Policy>
